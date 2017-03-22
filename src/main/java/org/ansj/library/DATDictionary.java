@@ -47,21 +47,22 @@ public class DATDictionary {
 			// 人名识别必备的
 			personNameFull(dat);
 			// 记录词典中的词语，并且清除部分数据
-			for (Item item : dat.getDAT()) {
-				if (item == null || item.getName() == null) {
-					continue;
-				}
-
-				if (item.getStatus() < 4) {
-					for (int i = 0; i < item.getName().length(); i++) {
-						IN_SYSTEM[item.getName().charAt(i)] = item.getName().charAt(i);
-					}
-				}
-				if (item.getStatus() < 2) {
-					item.setName(null);
-					continue;
-				}
-			}
+			//TODO hly:20170210:用户自定义的某些词不能被识别，例如“泰国”，删除这部分逻辑可以解决，进一步的优化搁置一下。
+//			for (Item item : dat.getDAT()) {
+//				if (item == null || item.getName() == null) {
+//					continue;
+//				}
+//
+//				if (item.getStatus() < 4) {
+//					for (int i = 0; i < item.getName().length(); i++) {
+//						IN_SYSTEM[item.getName().charAt(i)] = item.getName().charAt(i);
+//					}
+//				}
+//				if (item.getStatus() < 2) {
+//					item.setName(null);
+//					continue;
+//				}
+//			}
 			// 特殊字符标准化
 			IN_SYSTEM['％'] = '%';
 			logger.info("init core library ok use time : " + (System.currentTimeMillis() - start));

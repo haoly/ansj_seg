@@ -153,16 +153,16 @@ public abstract class Analysis {
 					gp.addTerm(new Term(String.valueOf(chars[i]), i, TermNatures.NULL));
 				}
 				break;
-			case 4:
-				start = i;
-				end = 1;
-				while (++i < endOffe && status(chars[i]) == 4) {
-					end++;
-				}
-				str = WordAlert.alertEnglish(chars, start, end);
-				gp.addTerm(new Term(str, start, TermNatures.EN));
-				i--;
-				break;
+//			case 4:
+//				start = i;
+//				end = 1;
+//				while (++i < endOffe && status(chars[i]) == 4) {
+//					end++;
+//				}
+//				str = WordAlert.alertEnglish(chars, start, end);
+//				gp.addTerm(new Term(str, start, TermNatures.EN));
+//				i--;
+//				break;
 			case 5:
 				start = i;
 				end = 1;
